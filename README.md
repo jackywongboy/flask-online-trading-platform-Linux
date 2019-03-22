@@ -2,7 +2,7 @@
 This file is for Linux based platform. <br><br>
 Using python 3.7 and Flask 1.0.2 and Mysql Database.
 <br><hr>
-If you are Windows users, you may use this version.<a href="https://github.com/jackywongboy/flask-online-trading-platform-windows" >Link</a><br>
+If you are Windows users, you may use this version.<a href="https://github.com/jackywongboy/flask-online-trading-platform-windows" target="_blank">Link</a><br>
 <hr>
 <h1><b>How to run the app</b></h1><br>
 <p>you nee to do use local host, so you need to download XAMPP</p>
@@ -18,4 +18,17 @@ If you are Windows users, you may use this version.<a href="https://github.com/j
     <li>sudo /etc/init.d/apache2 stop</li><p>Stop the apache2, if your version is "apache", no need to add 2 after apache</p>
 </ol>
 <p>you may then able to start, go to "localhost/phpmyadmin/"</p>
-
+<hr>
+<p>create a new data base name : "oceanshopdb"</p>
+<p>import my SQL into Mysql</p>
+<p>If it success, you may see 5 column in oceanshopdb</p>
+<hr>
+<p>Install python3 and pip3</p>
+<p>Use pip3 install all the feathers that are need, all feathers are on the top in "app.py"</p>
+<p>After import all the needed feathers, may should run the app</p>
+<p>remember to add sudo before the command to update and install tools</p>
+<p>go to the file link of the file, run</p>
+<p>python3 app.py</p>
+<p>It should run successfully</p>
+<h1>ENJOY!</h1>
+<hr>
