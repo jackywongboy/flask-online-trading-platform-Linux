@@ -5,7 +5,7 @@ Using python 3.7 and Flask 1.0.2 and Mysql Database.
 If you are Windows users, you may use this version.<a href="https://github.com/jackywongboy/flask-online-trading-platform-windows" target="_blank">Link</a><br>
 <hr>
 <h1><b>How to run the app</b></h1><br>
-<p>you nee to do use local host, so you need to download XAMPP</p>
+<p>you need ae local host and database, so download XAMPP</p>
 <a href="https://www.apachefriends.org/download.html" target="_blank">Download Link</a>
 <p>Please follow the instruction to install Xampp</p>
 <p>After you install, please try to start the local host.</p>
