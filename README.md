@@ -17,6 +17,7 @@ If you are Windows users, you may use this version.<a href="https://github.com/j
     <li>sudo service mysql stop</li><p>Stop the service of mysql and re-start by clicking start in XAMPP</p>
     <li>sudo /etc/init.d/apache2 stop</li><p>Stop the apache2, if your version is "apache", no need to add 2 after apache</p>
     <p> re-start by clicking start in XAMPP </p>
+    <li>Ater that, click the button "Go to application" on the XAMPP </li>
 </ol>
 <p>you may then able to start, go to "localhost/phpmyadmin/"</p>
 <hr>
