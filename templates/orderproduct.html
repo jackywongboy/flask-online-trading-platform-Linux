@@ -1,0 +1,70 @@
+
+
+<!--- order product page --->
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Order Product</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/viewproduct.css")}}">
+    <!---<script src="{{ url_for("static",filename="js/viewproduct.js")}}"></script>--->
+
+{% endblock %}
+
+{% block main %}
+    <div id="mid-content">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-3 my-4">
+                    <div class="list-group">
+                        <a class="list-group-item">Category</a>
+                        <a href="/tshirt" class="list-group-item">T-Shirt</a>
+                        <a href="/jeans" class="list-group-item">Jeans</a>
+                        <a href="/games" class="list-group-item">Games</a>
+                        <a href="/mobile" class="list-group-item">Mobile</a>
+                        <a href="/home" class="list-group-item">Home Furniture</a>
+                    </div>
+                </div>
+                <!-- /.col-lg-3 -->
+                <div class="col-lg-9">
+                    <div class="row">
+                        {% for product in oproduct %}
+                        <div class="col-lg-6">
+                            <div class="card mt-4">
+                                <img class="card-img-top img-fluid"
+                                     src="static/image/products/{{product.category}}/{{product.plink}}" alt="">
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                        <div class="col-lg-6">
+                            <div class="card card-outline-secondary my-4">
+                                <div class="card-header">
+                                    Order Details
+                                </div>
+
+                                <div class="card-body">
+                                    {% from "formhelper.html" import render_field %}
+
+                                    <form method="POST" action="/{{product.category}}?orderpid={{product.id}}">
+                                        <div class="form-group">
+                                            {{render_field(form.name, class_="form-control")}}
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{render_field(form.quantity, class_="form-control")}}
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">Confirm Order</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

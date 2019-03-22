@@ -1,0 +1,103 @@
+
+<!--- Base page for admin page --->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- Different Title -->
+        {% block head %}
+        {% endblock %}
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for("static",filename="css/adminbase.css")}}">
+
+        <!-- icon -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='image/favicon.ico') }}">
+
+    </head>
+    <body>
+
+        <!-- Navbar Menu -->
+        <nav class="navbar navbar-expand-sm navbar-light" >
+            <a class="navbar-brand" href="{{ url_for("main") }}">
+                <strong>Admin Page</strong>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavBar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavBar">
+                <ul class="navbar-nav">
+
+                    <!--- when admin login in --->
+
+                    {% if session['adname'] %}
+                        <li class="nav-item">
+                            <a href="{{ url_for("adminmain")}}">{{ session['adname'] }}</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/logout">Logout</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ url_for("adalluser")}}">All Users</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ url_for("adallpro")}}">All Products</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ url_for("advieworders")}}">All Orders</a>
+                        </li>
+
+                    {% else %}
+                    {% endif %}
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                        Style="background-color: rgba(0, 255, 255, 0.692)">Search</button>
+                    </form>
+
+                </ul>
+            </div>
+        </nav>
+        <!-- Different Main Parts -->
+
+        {% block main %}
+
+        {% endblock %}
+
+
+        <!-- Footer -->
+
+        <footer>
+            <div>
+                <br>
+                Student ID : 55202288
+                |Contact Us
+                |Email
+                |©2019 All Rights Reserved
+                <hr />
+                Network License: Project Use Only [2019] Version:0.1
+                |205 Modern Website Design [2019]
+                |Information Technology of Business s.[2018]
+                <br>
+                Last modified by Jacky
+                <br>
+            </div>
+        </footer>
+
+    </body>
+</html>

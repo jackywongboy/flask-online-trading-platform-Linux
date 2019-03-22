@@ -1,0 +1,42 @@
+
+
+<!--- contact us page --->
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/goal.css")}}">
+    <!---<script src="{{ url_for("static",filename="js/goal.js")}}"></script>--->
+
+{% endblock %}
+
+{% block main %}
+    <div id="content2">
+        <h2 id="tableheading">Contact Us</h2>
+
+          <table class="table table-hover" style="color: white;">
+            <tbody>
+              <tr>
+                <td>Email</td>
+                <td>jycwong4-c@ad.cityu.edu.hk</td>
+                <td><a href="mailto:http://jycwong4-c@ad.cityu.edu.hk" >Go</a></td>
+              </tr>
+
+              <tr>
+                <td>Facebook</td>
+                <td>Ocean Trading Flatform</td>
+                <td><a href="http://facebook.com" >Go</a></td>
+              </tr>
+
+              <tr>
+                <td>Whatsapp</td>
+                <td>+852 98765431</td>
+                <td><a href="https://web.whatsapp.com/" >Go</a></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+    </div>
+
+{% endblock %}

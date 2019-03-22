@@ -1,0 +1,119 @@
+
+
+<!--- user view their own product page --->
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Product</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/viewproduct.css")}}">
+    <!---<script src="{{ url_for("static",filename="js/viewproduct.js")}}"></script>--->
+
+{% endblock %}
+
+{% block main %}
+    <div id="mid-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 my-4">
+                    <div class="list-group">
+                        <a class="list-group-item">Category</a>
+                        <a href="/tshirt" class="list-group-item">T-Shirt</a>
+                        <a href="/jeans" class="list-group-item">Jeans</a>
+                        <a href="/games" class="list-group-item">Games</a>
+                        <a href="/mobile" class="list-group-item">Mobile</a>
+                        <a href="/home" class="list-group-item">Home Furniture</a>
+                    </div>
+                </div>
+                <!-- /.col-lg-3 -->
+                <div class="col-lg-9">
+                    <div class="row">
+                        {% for product in productID %}
+                        <div class="col-lg-6">
+                            <div class="card mt-4">
+                                <img class="card-img-top img-fluid"
+                                     src="static/image/products/{{product.category}}/{{product.plink}}" alt="">
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                        <div class="col-lg-6">
+                            <div class="card card-outline-secondary my-4">
+                                <div class="card-header">
+                                    Product Details
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">{{ product.pname}}</h3>
+                                    <h4>${{ product.pprice}}</h4>
+                                    <p class="card-text">{{ product.description}}</p>
+                                    <br>
+                                    <p>Upload by : {{ name }}</p>
+                                    <a class="btn btn-primary" href="/add_to_cart/{{ product.pID }}">Add to Cart</a>
+                                    <br>
+                                    <br>
+                                    <a href="/{{product.category}}?orderpid={{product.pID}}" class="btn btn-success">Order Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <h3 id="productheader">Other Similar Products</h3>
+            <div class="row">
+                <div class="col-lg-6 my-4">
+                    {% for product in similar %}
+                    <div class="col-lg-6 col-md-4 col-sm-6">
+                        <div class="card mb-4" id="carddes">
+                            <a href="/{{product.category}}?pid={{product.pID}}">
+                                <div class="card-img-top id_{{product.pID}}"
+                                     style="background: url(
+                                             'static/image/products/{{product.category}}/{{product.plink}}');
+                                             background-repeat:no-repeat;
+                                             background-size: cover; height:200px;width:100% ">
+                                </div>
+                                <div class="card-body" id="carword">
+                                    <h5>{{ product.pname }}</h5>
+                                    <h4>${{ product.pprice }}</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="col-lg-6 my-4" id="commentbox">
+                    <h3>Comments : ({{ comment|length }}) </h3>
+                    <form action="{{ url_for('addcomment') }}" method="post"  class="formcom">
+                        <div class="form-group">
+                            {% for product in productID %}
+                                <input type="hidden" name="product_id_com" value="{{ product.pID }}">
+                                <input type="hidden" name="product_cat_com" value="{{ product.category }}">
+                                <input type="text" name="comment_content" class="form-control" placeholder="Please enter ">
+                            {% endfor %}
+                        </div>
+                        <div class="form-group" style="text-align: right">
+                            <button class="btn btn-primary">Send</button>
+                        </div>
+                    </form>
+                    {% for comment in comment %}
+                    <ul id="ull">
+                        <li id="lii">
+                            <div class="avagp">
+                                <img src="{{ comment.profilepicture }}" class="ava" alt="pp">
+                            </div>
+                            <div class="commentgp">
+                                <p class="commenttitle">{{ comment.username }}</p>
+                                <p class="commentcon">{{ comment.comment }}</p>
+                                <div class="commentinfo">
+                                    <span class="time">{{ comment.ctime }}</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

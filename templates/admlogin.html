@@ -1,0 +1,31 @@
+
+
+
+<!--- admin login page --->
+{% extends "adminbase.html" %}
+
+{% block head %}
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/admlogin.css")}}">
+
+{% endblock %}
+
+{% block main %}
+    <div id="content">
+        <div class="jumbotron" id="colorlogin">
+            <h2 style="text-align: center;">Login Form</h2>
+                <form method="POST" action="/admlogin">
+                  <div class="form-group">
+                    <label for="ademail">Email address</label>
+                    <input type="email" class="form-control" id="ademail" name="ademail" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="adpw">Password</label>
+                    <input type="password" class="form-control" id="adpw" name="adpw" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+        </div>
+    </div>
+{% endblock %}

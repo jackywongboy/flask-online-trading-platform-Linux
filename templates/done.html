@@ -1,0 +1,35 @@
+
+
+<!--- done page when success upload new profile picture --->
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Crop</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/done.css")}}">
+    <!---<script src="{{ url_for("static",filename="js/done.js")}}"></script>--->
+    {{ avatars.jcrop_css() }}
+
+{% endblock %}
+
+{% block main %}
+    <div id="content">
+        <div class="row">
+
+            <div class="col-sm-5">
+                <br>
+                <h1>Done!</h1>
+                <br>
+                <h3><a href="{{ url_for("personal") }}">Back Personal Page</a></h3>
+            </div>
+
+            <div class="col-sm-7">
+                <br>
+                <h3>Your New Profile Picture</h3>
+                <br>
+                <p><img src="{{ url_l }}"></p>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

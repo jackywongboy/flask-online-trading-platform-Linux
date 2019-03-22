@@ -1,0 +1,195 @@
+
+
+<!--- view shopping cart page --->
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/uploaded.css")}}">
+    <!---<script src="{{ url_for("static",filename="js/uploaded.js")}}"></script>--->
+
+{% endblock %}
+
+{% block main %}
+    <div id="mid-content">
+        <h3>This is your shopping chat </h3>
+        <p>You have {{ productno }} products in your shopping chart.</p><br>
+        <p>You have shopping chart will be clear after you logged out.</p>
+        {% include "flashmsg.html" %}
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    {% for product in result %}
+                    <div class="col-lg-6">
+                        <div class="card mt-4">
+                            <img class="card-img-top img-fluid"
+                                 src="static/image/products/{{product.category}}/{{product.plink}}" alt="">
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                    <div class="col-lg-6">
+                        <div class="card card-outline-secondary my-4">
+                            <div class="card-header">
+                                Product Details
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">{{ product.pname}}</h3>
+                                <h4>${{ product.pprice}}</h4>
+                                <p class="card-text">{{ product.description}}</p>
+                                <br>
+                                <a href="/{{product.category}}?order={{product.pID}}" class="btn btn-success">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!--- row1 end --->
+
+        {% if result2 %}
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    {% for product in result2 %}
+                    <div class="col-lg-6">
+                        <div class="card mt-4">
+                            <img class="card-img-top img-fluid"
+                                 src="static/image/products/{{product.category}}/{{product.plink}}" alt="">
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                    <div class="col-lg-6">
+                        <div class="card card-outline-secondary my-4">
+                            <div class="card-header">
+                                Product Details
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">{{ product.pname}}</h3>
+                                <h4>${{ product.pprice}}</h4>
+                                <p class="card-text">{{ product.description}}</p>
+                                <br>
+                                <a href="/{{product.category}}?order={{product.pID}}" class="btn btn-success">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+
+        {% endif %}
+
+        <!--- row2 end --->
+
+
+        {% if result3 %}
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    {% for product in result3 %}
+                    <div class="col-lg-6">
+                        <div class="card mt-4">
+                            <img class="card-img-top img-fluid"
+                                 src="static/image/products/{{product.category}}/{{product.plink}}" alt="">
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                    <div class="col-lg-6">
+                        <div class="card card-outline-secondary my-4">
+                            <div class="card-header">
+                                Product Details
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">{{ product.pname}}</h3>
+                                <h4>${{ product.pprice}}</h4>
+                                <p class="card-text">{{ product.description}}</p>
+                                <br>
+                                <a href="/{{product.category}}?order={{product.pID}}" class="btn btn-success">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+
+        {% endif %}
+
+        <!--- row3 end --->
+
+        {% if result4 %}
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    {% for product in result4 %}
+                    <div class="col-lg-6">
+                        <div class="card mt-4">
+                            <img class="card-img-top img-fluid"
+                                 src="static/image/products/{{product.category}}/{{product.plink}}" alt="">
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                    <div class="col-lg-6">
+                        <div class="card card-outline-secondary my-4">
+                            <div class="card-header">
+                                Product Details
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">{{ product.pname}}</h3>
+                                <h4>${{ product.pprice}}</h4>
+                                <p class="card-text">{{ product.description}}</p>
+                                <br>
+                                <a href="/{{product.category}}?order={{product.pID}}" class="btn btn-success">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+
+        {% endif %}
+
+        <!--- row4 end --->
+
+        {% if result5 %}
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    {% for product in result5 %}
+                    <div class="col-lg-6">
+                        <div class="card mt-4">
+                            <img class="card-img-top img-fluid"
+                                 src="static/image/products/{{product.category}}/{{product.plink}}" alt="">
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                    <div class="col-lg-6">
+                        <div class="card card-outline-secondary my-4">
+                            <div class="card-header">
+                                Product Details
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">{{ product.pname}}</h3>
+                                <h4>${{ product.pprice}}</h4>
+                                <p class="card-text">{{ product.description}}</p>
+                                <br>
+                                <a href="/{{product.category}}?order={{product.pID}}" class="btn btn-success">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+
+        {% endif %}
+
+        <!--- row5 end --->
+
+{% endblock %}

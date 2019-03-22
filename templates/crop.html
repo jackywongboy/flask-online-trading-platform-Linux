@@ -1,0 +1,30 @@
+
+
+<!--- crop the profile picture page --->
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Crop</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/crop.css")}}">
+    <!---<script src="{{ url_for("static",filename="js/crop.js")}}"></script>--->
+    {{ avatars.jcrop_css() }}
+
+{% endblock %}
+
+{% block main %}
+    <div id="content">
+        <h1>Step 2: Crop</h1>
+        {{ avatars.crop_box('get_avatar', session['raw_filename']) }}
+        {{ avatars.preview_box('get_avatar', session['raw_filename']) }}
+        <form method="post">
+            <input type="hidden" id="x" name="x">
+            <input type="hidden" id="y" name="y">
+            <input type="hidden" id="w" name="w">
+            <input type="hidden" id="h" name="h">
+            <input type="submit" value="Crop!" style="font-size: 30px;color: #0b8fff">
+        </form>
+        {{ avatars.jcrop_js() }}
+        {{ avatars.init_jcrop() }}
+    </div>
+
+{% endblock %}

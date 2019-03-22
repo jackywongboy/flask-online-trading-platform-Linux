@@ -1,0 +1,65 @@
+
+
+<!--- user update personal page --->
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Edit Personal Information</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/updatepersonal.css")}}">
+
+{% endblock %}
+
+{% block main %}
+    <div id="mid-content">
+
+        <div id="page-wrapper">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Edit Personal Information</h1>
+                    {% include 'flashmsg.html' %}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    {% for users in userinfo %}
+                                    <form role="form" enctype=multipart/form-data class="" action="/updatepersonal?info"
+                                          method="post">
+                                        <div class="form-group">
+                                            <label>Username Name</label>
+                                            <input class="form-control" required="required" name="username" value="{{users.username}}" placeholder="Username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>User Email</label>
+                                            <input class="form-control" required="required" name="useremail" value="{{users.useremail}}" placeholder="Email">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Mobile Number</label>
+                                            <input class="form-control" required="required" name="mobile" value="{{users.usermobile}}" placeholder="mobile number">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <textarea class="form-control" required="required" name="address" rows="3"
+                                                      placeholder="address">{{users.useraddress}}</textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-default" id="btncolor">Submit</button>
+                                    </form>
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

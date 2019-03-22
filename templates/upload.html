@@ -1,0 +1,24 @@
+
+
+<!--- upload page for upload profile picture --->
+{% extends "base.html" %}
+
+{% block head %}
+    <title>upload</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/upload.css")}}">
+    <!---<script src="{{ url_for("static",filename="js/upload.js")}}"></script>--->
+
+{% endblock %}
+
+{% block main %}
+    <div id="content">
+
+        <h1>Step 1: Upload</h1>
+        <p>Please select a file. Only support ".jpg" and ".png"</p>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit">
+        </form>
+    </div>
+
+{% endblock %}

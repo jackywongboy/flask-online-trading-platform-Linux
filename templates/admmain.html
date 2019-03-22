@@ -1,0 +1,28 @@
+
+
+<!--- admin main page --->
+{% extends "adminbase.html" %}
+
+{% block head %}
+    <title>Admin Main</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/admmain.css")}}">
+
+{% endblock %}
+
+{% block main %}
+    <div id="content">
+        <h1>There is ADMIN PAGE</h1>
+        <br>
+        <p>Click one of the button to check or update information </p><br><br>
+        <a href="{{ url_for("adalluser")}}" class="btn btn-lg btn-success">
+            <span class="glyphicon glyphicon-user"></span> All User</a>
+        <br><br><br>
+        <a href="{{ url_for("adallpro")}}" class="btn btn-lg btn-info">
+            <span class="glyphicon glyphicon-list"></span> All Products</a>
+        <br><br><br>
+        <a href="{{ url_for("advieworders")}}" class="btn btn-lg btn-warning">
+            <span class="glyphicon glyphicon-qrcode"></span> All Orders</a>
+        <br><br><br>
+        <p>Please Log out after using </p>
+    </div>
+{% endblock %}

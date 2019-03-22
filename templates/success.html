@@ -1,0 +1,37 @@
+
+
+<!--- success page , use to show success info to user --->
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Success</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/error.css")}}">
+    <!---<script src="{{ url_for("static",filename="js/error.js")}}"></script>--->
+{% endblock %}
+
+{% block main %}
+    <div id="content">
+        <div class="container">
+             <div class="row">
+                <div class="col-sm-5">
+                    <h1 id="errorbig">Successful</h1>
+                    <br>
+                    {% if session['success'] %}
+
+                        <h3 id="errorbig">Your request has been processed : {{ session['success'] }}</h3>
+                        <br>
+                        <p id="errorbig">You may now able to leave this page.</p>
+
+                    {% endif %}
+                </div>
+
+                <div class="col-sm-7">
+                    <img id="suc" src="{{ url_for("static",filename="image/success.png")}}" alt="error" >
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

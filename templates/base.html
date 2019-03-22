@@ -1,0 +1,183 @@
+
+
+<!--- Base page for users page --->
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <!-- Different Title -->
+        {% block head %}
+        {% endblock %}
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for("static",filename="css/base.css")}}">
+
+        <!-- icon -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='image/logo.png') }}">
+
+    </head>
+
+    <body>
+
+        <!-- Navbar Menu -->
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #47cbffa9;">
+            <a class="navbar-brand" href="{{ url_for("main") }}">
+                <img src="{{ url_for("static",filename="image/logo.png")}}" alt="logo" style="width:68px;height: 60px;border-radius: 50%;">
+                <strong>Welcome</strong>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavBar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavBar">
+                <ul class="navbar-nav" style="line-height: 60px;">
+
+                    {% if session['inputname'] %}
+                        <li class="nav-item">
+                            <a href="{{ url_for("personal") }}">
+                                <img src="{{session['ppic']}}" alt="" style="width:60px;height: 60px;border-radius: 25%;">
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >
+                                {{ session['inputname'] }}</a>
+                            <div class="dropdown-menu" style="background-color:rgba(255,255,255,.8);line-height: 30px;">
+                                <a class="dropdown-item" href="{{ url_for("personal") }}">Personal Page </a>
+                                <a class="dropdown-item" href="{{ url_for("cart") }}" target="_blank">Shopping Chat</a>
+                                <a class="dropdown-item" href="{{ url_for("uploadproduct") }}" >Upload New Product</a>
+                                <a class="dropdown-item" href="{{ url_for("uploaded") }}" >Uploaded Product</a>
+                                <a class="dropdown-item" href="{{ url_for("vieworders") }}" >Orders</a>
+
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/logout">Logout</a>
+                        </li>
+
+                    {% else %}
+
+                        <!-- Navbar Login -->
+
+                        <li class="nav-item dropdown" >
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><b>Login</b><span class="caret"></span></a>
+                            <ul id="login-dp" class="dropdown-menu" style="line-height: 30px;">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Login via
+                                            <div class="social-buttons" >
+                                                <a href="{{ url_for("adminlogin") }}" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                                <a href="{{ url_for("adminlogin") }}" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                            </div>
+                                            or
+                                            <form class="form" role="form" method="POST" accept-charset="UTF-8" id="login-nav" action="/login">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="inputemail">Email address</label>
+                                                    <input type="email" class="form-control" name="inputemail" placeholder="Email address" required
+                                                    style="background-color:rgba(255,255,255,.8)">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="inputpassword">Password</label>
+                                                    <input type="password" class="form-control" name="inputpassword" placeholder="Password" required
+                                                    style="background-color:rgba(255,255,255,.8)">
+                                                    <div class="help-block text-right"><a href="{{ url_for('forgotpw') }}">Forget Password</a></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                    <input type="checkbox"> keep me logged-in
+                                                    </label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div>
+                                            <a href="{{ url_for("register") }}" style="text-align: center;"><b>New here ? Register Now !</b></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Navbar Register -->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for("register") }}" >Register</a>
+                        </li>
+
+                    {% endif %}
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">category</a>
+                        <div class="dropdown-menu" style="background-color:rgba(255,255,255,.8);line-height: 30px;">
+                            <a class="dropdown-item" href="{{ url_for("tshirt") }}" target="_blank">T-Shirt</a>
+                            <a class="dropdown-item" href="{{ url_for("jeans") }}" target="_blank">Jeans</a>
+                            <a class="dropdown-item" href="{{ url_for("games") }}" target="_blank">Games</a>
+                            <a class="dropdown-item" href="{{ url_for("mobile") }}" target="_blank">Mobile</a>
+                            <a class="dropdown-item" href="{{ url_for("home") }}" target="_blank">Home Furniture</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >About Us</a>
+                        <div class="dropdown-menu" style="background-color:rgba(255,255,255,.8);">
+                            <a class="dropdown-item" href="{{ url_for("goal") }}">Our Goal</a>
+                            <a class="dropdown-item" href="{{ url_for("contactus") }}">Contact Us</a>
+                        </div>
+                    </li>
+
+                    <!-- Navbar Search -->
+
+                    <form class="form-inline" action="/search" method="get">
+                        <input class="form-control mr-sm-2" type="search"
+                               placeholder="Search" aria-label="Search" name="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                        Style="background-color: rgba(0, 255, 255, 0.692)">Search</button>
+                    </form>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Different Main Parts -->
+
+        {% block main %}
+
+        {% endblock %}
+
+
+        <!-- Footer -->
+
+        <footer>
+            <div>
+                <br>
+                Student ID : 55202288
+                |Contact Us
+                |Email
+                |©2019 All Rights Reserved
+                <hr />
+                Network License: Project Use Only [2019] Version:0.1
+                |205 Modern Website Design [2019]
+                |Information Technology of Business s.[2018]
+                <br>
+                Last modified by Jacky
+                <br>
+            </div>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,82 @@
+
+
+
+<!--- user personal page --->
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Personal Page</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/personal.css")}}">
+    <!---<script src="{{ url_for("static",filename="js/personal.js")}}"></script>--->
+
+
+{% endblock %}
+
+{% block main %}
+    <div id="content">
+        <p>In personal page , you can update your personal information.</p>
+
+        <br>
+
+        <div class="container">
+          <h2 id="tableheading">Personal Information</h2>
+
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <td>User Profile Picture</td>
+                <td><img src="{{session['profilepicture']}}"
+                 alt="profilepicture" style="width:60px;height: 60px;border-radius: 25%;"></td>
+                <td><a href="{{ url_for("upload") }}" >CHANGE</a></td>
+              </tr>
+
+              <tr>
+                <td>User ID</td>
+                <td>{{ session['userID'] }}</td>
+                <td><i>FIXED</i></td>
+              </tr>
+
+              <tr>
+                <td>User Name</td>
+                <td>{{ session['username'] }}</td>
+                <td><a href="{{ url_for("updatepersonal") }}" >CHANGE</a></td>
+              </tr>
+
+              <tr>
+                <td>User Email</td>
+                <td>{{ session['useremail'] }}</td>
+                <td><a href="{{ url_for("updatepersonal") }}" >CHANGE</a></td>
+              </tr>
+
+              <tr>
+                <td>User Password</td>
+                <td>*******</td>
+                <td><a href="{{ url_for("changepw") }}" >CHANGE</a></td>
+              </tr>
+
+              <tr>
+                <td>User Mobile Number</td>
+                <td>{{ session['usermobile'] }}</td>
+                <td><a href="{{ url_for("updatepersonal") }}" >CHANGE</a></td>
+              </tr>
+
+              <tr>
+                <td>User Address</td>
+                <td>{{ session['useraddress'] }}</td>
+                <td><a href="{{ url_for("updatepersonal") }}" >CHANGE</a></td>
+              </tr>
+
+              <tr>
+                <td>User Register Date</td>
+                <td>{{ session['registerdate'] }}</td>
+                <td><i>FIXED</i></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+    </div>
+
+
+
+{% endblock %}
