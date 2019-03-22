@@ -6,7 +6,7 @@ If you are Windows users, you may use this version.<a href="https://github.com/j
 <hr>
 <h1><b>How to run the app</b></h1><br>
 <p>you nee to do use local host, so you need to download XAMPP</p>
-<a href="https://www.apachefriends.org/download.html" >Download Link</a>
+<a href="https://www.apachefriends.org/download.html" target="_blank">Download Link</a>
 <p>Please follow the instruction to install Xampp</p>
 <p>After you install, please try to start the local host.</p>
 <p>You may have problem on starting the server.</p>
