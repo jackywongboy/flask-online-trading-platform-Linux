@@ -16,6 +16,7 @@ If you are Windows users, you may use this version.<a href="https://github.com/j
     <li>sudo '/opt/lampp/manager-linux-64.run'</li><p>Start the XAMPP</p>
     <li>sudo service mysql stop</li><p>Stop the service of mysql and re-start by clicking start in XAMPP</p>
     <li>sudo /etc/init.d/apache2 stop</li><p>Stop the apache2, if your version is "apache", no need to add 2 after apache</p>
+    <p> re-start by clicking start in XAMPP </p>
 </ol>
 <p>you may then able to start, go to "localhost/phpmyadmin/"</p>
 <hr>
@@ -25,9 +26,9 @@ If you are Windows users, you may use this version.<a href="https://github.com/j
 <hr>
 <p>Install python3 and pip3</p>
 <p>Use pip3 install all the feathers that are need, all feathers are on the top in "app.py"</p>
-<p>After import all the needed feathers, may should run the app</p>
+<p>After import all the needed feathers, you may run the app</p>
 <p>remember to add sudo before the command to update and install tools</p>
-<p>go to the file link of the file, run</p>
+<p>go to the link of the file, command to run is:</p>
 <p>python3 app.py</p>
 <p>It should run successfully</p>
 <h1>ENJOY!</h1>
