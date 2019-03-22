@@ -1,0 +1,54 @@
+/***** Top-Content *****/
+
+.top-content { padding: 120px 0 150px 0; background-color: rgba(184, 184, 184, 0);}
+
+.top-content .text { padding-top: 60px; color: #fff; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+
+/***** BackGround Picture *****/
+
+.filter {
+    width:100%;
+    max-width:100%;
+    height:500px;
+    z-index: -999;
+}
+
+/***** Main-Style *****/
+
+#mid-content{
+    padding: 30px 60px 20px 60px;
+}
+
+#status{
+    color: aliceblue;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: left;
+}
+
+header {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family:cursive;
+}
+
+/***** Card Style *****/
+
+#productheader{
+    text-align: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#carddes{
+    box-shadow: 0 5px 5px 0 rgb(44, 188, 255);
+    text-align: center;
+    font-family: arial;
+    height: 400px;
+    max-height: 400px;
+    background-color: #fff7cb;
+}
+
+#carword{
+    color: #3445ff;
+    font-size: 22px;
+}

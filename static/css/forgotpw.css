@@ -1,0 +1,17 @@
+
+#content{
+    padding: 130px 100px 220px 100px;
+    text-align: left;
+}
+
+#border1{
+    background-color: white;
+}
+
+.formbox{
+    padding-top: 20px;
+}
+
+.inputbox{
+    width: 600px;
+}

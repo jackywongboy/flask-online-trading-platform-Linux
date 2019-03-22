@@ -1,0 +1,76 @@
+#mid-content{
+    padding: 110px 60px 86px 60px;
+}
+
+#carddes{
+    box-shadow: 0 5px 5px 0 rgb(44, 188, 255);
+    text-align: center;
+    font-family: arial;
+    height: 400px;
+    max-height: 400px;
+    background-color: #fff7cb;
+}
+
+#carword{
+    color: #3445ff;
+    font-size: 22px;
+}
+
+/***** Comment Style *****/
+
+.formcom{
+    border-bottom: 1px solid #000000;
+}
+
+#commentbox{
+    background-color: #cbcbcb;
+    border-style: solid ;
+    border-radius:5%;
+
+}
+
+#ull{
+    list-style: none;
+    padding-left: 0;
+    padding-top: 5px;
+}
+
+#lii{
+    border-bottom: 1px solid #000000;
+    overflow: hidden;
+}
+
+.avagp{
+    width:38px;
+    height: 100%;
+    float: left;
+
+}
+
+.ava{
+    width: 60px;
+    height: 60px;
+    border-radius:25%;
+}
+
+.commentgp{
+    float:left;
+    width: 400px;
+    margin-left: 30px;
+}
+
+.commenttitle{
+    color: #21e1ff;
+    font-weight: 900;
+    text-shadow: -1px 0 #1b2380, 0 1px #1b2380, 1px 0 #1b2380, 0 -1px #1b2380;
+}
+.commentcon {
+  word-break: break-all;
+}
+.commentinfo{
+    text-align: right;
+}
+
+.time{
+    margin-right: 20px;
+}

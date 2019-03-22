@@ -1,0 +1,15 @@
+/***** Error Style *****/
+#content{
+    padding: 110px 30px 20px 30px;
+}
+
+#errorbig{
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+#suc{
+    height:400px;
+    width: 400px;
+}

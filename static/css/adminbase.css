@@ -1,0 +1,37 @@
+/***** Base Style *****/
+* {
+    margin: 0;
+    padding: 0
+}
+body {
+    background-color: rgb(64, 64, 64);
+}
+
+/***** Navbar *****/
+
+.navbar {
+    background-color: darkgrey;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+footer {
+    text-align: center;
+    height: 120px;
+    max-height: 120px;
+    color: rgb(187, 187, 187);
+    font-size: 12px;
+    background-color: rgb(0, 0, 0);
+}

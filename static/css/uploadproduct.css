@@ -1,0 +1,13 @@
+#mid-content{
+    padding: 105px 60px 20px 60px;
+}
+
+#btn{
+    background-color: aquamarine;
+    color: #3B5998;
+}
+
+#terms{
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

@@ -1,0 +1,19 @@
+/***** Personal Style *****/
+
+#content{
+    padding: 110px 30px 20px 30px;
+}
+
+#tableheading{
+    text-align: center;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+td{
+    line-height:65px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 20px;
+    padding: 10px;
+}
