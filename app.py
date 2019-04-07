@@ -3,7 +3,7 @@
 #created by : student ID : 55202288
 #Assisgnment for 205com Developing the Modern Web
 #created on : 11st March 2019
-#coded by : pycharm pro 2018.1version
+#coded by : VS Code
 #Useing : Flask 1.0.2 & Python 3.7.2 & MySQL Database
 
 #import features
@@ -52,7 +52,7 @@ app.config['MAIL_PASSWORD'] = 'python123'
 app.config['MAIL_DEFAULT_SENDER'] = 'ilovepython2018@outlook.com'
 app.config['FLASKY_ADMIN']  = 'ilovepython2018@outlook.com'
 mail = Mail(app)
-#Error cause by Google Upgrading the Security Level which cause less secure apps cannot access to gmail account
+#Error may cause by Google Upgrading the Security Level which cause less secure apps cannot access to gmail account
 
 @app.route('/')
 def main():#main page random show up different types of products
@@ -112,11 +112,6 @@ def login():#after login , return data from database to the main page
         except TypeError :
             userlogin.append("1")
         curl.close()
-
-        #print("userlogin : ",userlogin)
-        #print("user : ",user)
-        #print(bcrypt.hashpw(inputpassword, user["userpw"].encode('utf-8')))
-        #print(user["userpw"].encode('utf-8'))
 
         if  len(userlogin) > 1 :
             if bcrypt.hashpw(inputpassword, user["userpw"].encode('utf-8')) == user["userpw"].encode('utf-8'):
